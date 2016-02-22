@@ -9,21 +9,26 @@ Include in your .zshrc (or equivalent):
 
 """
 
-import os 
 import sys
-import numpy as np
-import pandas as pd
  
-from datetime import datetime
-
 def print_line():
     print "*"*10
 
 print  
 print_line()
 print "python", repr(sys.version)
-print "numpy", np.__version__
-print "pandas", pd.__version__
+
+try:
+    import numpy
+    print "numpy", np.__version__
+except ImportError:
+    print "numpy not available"
+
+try:
+    import pandas
+    print "pandas", pd.__version__
+except ImportError:
+    print "pandas not available"
 
 try:
     import django
