@@ -19,13 +19,13 @@ print_line()
 print "python", repr(sys.version)
 
 try:
-    import numpy
+    import numpy as np
     print "numpy", np.__version__
 except ImportError:
     print "numpy not available"
 
 try:
-    import pandas
+    import pandas as pd
     print "pandas", pd.__version__
 except ImportError:
     print "pandas not available"
